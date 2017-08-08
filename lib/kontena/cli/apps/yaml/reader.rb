@@ -1,7 +1,7 @@
 require_relative 'service_extender'
 require_relative 'validator'
 require_relative 'validator_v2'
-require_relative '../../../util'
+require 'kontena/util'
 
 module Kontena::Cli::Apps
   module YAML

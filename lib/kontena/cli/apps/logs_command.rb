@@ -1,5 +1,5 @@
 require_relative 'common'
-require_relative '../helpers/log_helper'
+require 'kontena/cli/helpers/log_helper'
 
 module Kontena::Cli::Apps
   class LogsCommand < Kontena::Command
