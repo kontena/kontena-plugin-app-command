@@ -8,7 +8,7 @@ This plugin adds back the "app" subcommand to kontena-cli which was removed in K
 
 ## Usage
 
-> Applications has been superceded by [Stacks](stacks.md).
+> Applications has been superceded by Stacks.
 
 Any kind of application can be easily deployed to Kontena using the Kontena `app` commands. With these commands, you can use Kontena like any regular PaaS platform. One of the most interesting features of Kontena is the ability to import projects from other common PaaS platforms.
 
