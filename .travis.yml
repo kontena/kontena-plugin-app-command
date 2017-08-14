@@ -1,0 +1,21 @@
+sudo: required
+language: ruby
+services:
+- docker
+rvm:
+- 2.1.10
+- 2.2.6
+- 2.3.3
+- 2.4.1
+env:
+  global:
+    secure: lZ13zDiPIfKv6kd+dw93+UBgR+V5dEiwfcFOmPqhTbcdZKbBFYx7MX5l3pc3+T3W91O7To2xz+73f85OzDTyQn41HY6qrolwgQh/Pqo+8gbXu+eTN13qkUtr1RxLw0Qk+O697q85T1mM3GQd2IR5fdsyB3E56Z4Y2+NsA0YAXu7tuxGRsRgHg4B96/GxdLIKzF99TwqrZhxRncGgz76x7hN81K0kfRRKKWSx3fqXWdhM0KOZzxPbeyTaB46di2QHgyal5RqzqgFD0aWQ/wMxlkKebzajsG2ArHOccgH+2thXlMdRV6hjV9cEtNnAaTi2DypFbshoMTNN4Uox7L4kFlGXrikEownl8T66XYc05cdKiy8ekbhV0M7pKNcVSD7mwn68XZpqPsECpAI0QMgYTwGYN2DWdLVUBudYSFBhBkN7D7/HIdpN+s/Sszl5fpvZNnclVcZE/6s0X+2uDf6jurqm+Bel+e58JUm4KfWFVyMLM6NA7rq+zfOXzPOAivOTd9651o4w2Rot3GiuvnmNdS4rndaVpXdF4NT1/SHVDcJ5faqbaZ0/9498zUv8ylesOOnL0QUWG58xd6bsFYlgTfwR3TDlm6xFBsUvnxZhv3Lz0G/L4XRW1H2q6P/QfGt4JOje40+zUoCtjtI21MQcj19Lx1r5Vr6Fnf/aD6vdJDs=
+cache: bundler
+script: bundle install && bundle exec rspec spec/
+deploy:
+- provider: rubygems
+  api_key: "$GEM_TOKEN"
+  gem: kontena-plugin-app-command
+  on:
+    tags: true
+    rvm: 2.4.1
